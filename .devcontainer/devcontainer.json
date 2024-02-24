@@ -1,8 +1,8 @@
 {
-    "name": "Golang",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+	"name": "Golanga",
+    "dockerComposeFile": "docker-compose.yml",
+	"service": "go",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "forwardPorts": [8080],
     "features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
@@ -13,5 +13,13 @@
 			"upgradePackages": "true"
 		}
 	},
-    "containerUser": "vscode"
+    "containerUser": "vscode",
+	"postCreateCommand": "bash -c ping localhost",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go"
+			]
+		}
+	}
 }
